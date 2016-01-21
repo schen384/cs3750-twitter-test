@@ -1,0 +1,28 @@
+.container {
+  background:#f5f8fa;
+
+}
+.glyphicon{
+  color:#aab8c2;
+}
+
+.glyphicon:hover{
+  cursor: pointer;
+}
+
+.glyphicon.not-done:hover{
+  color:#2B7BB9;
+  cursor: pointer;
+}
+.glyphicon.done{
+  color:#2B7BB9;
+
+}
+
+a {
+  color: #00B7FF;
+}
+
+.post-container{
+  border: solid;
+}

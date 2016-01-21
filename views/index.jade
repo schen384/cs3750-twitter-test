@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    .row.container
+    .col-lg-8.col-lg-offset-2
+        h1 #{title}
+        div.list-group
+            //for each Tweet object from the Get Request
+            each val in homeFeed
+                .list-group-item
+                    .row
+                        .col-lg-1
+                            img(src = "#{val.user.profile_image_url_https}")
+                        .col-lg-11
+                            ul.list-inline
+                                li
+                                    strong.left #{val.user.name}
+                                li
+                                    p.left @#{val.user.screen_name}
+                            p #{val.text}
+                            .row
+                                .col-lg-2.text-center
+                                    span.glyphicon.glyphicon-share-alt
+                                .col-lg-2.text-center(style="display:inline")
+                                    if val.favorited
+                                        span.glyphicon.glyphicon-refresh.done
+                                    else
+                                        span.glyphicon.glyphicon-refresh.not-done
+                                    p #{val.retweet_count}
+                                .col-lg-2.text-center(style="display:inline")
+                                    if val.favorited
+                                        span.glyphicon.glyphicon-heart.done
+                                    else
+                                        span.glyphicon.glyphicon-heart.not-done
+
+                                    p #{val.favorite_count}
+
+
